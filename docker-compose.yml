@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  webmvcreidoalmoco:
+    image: webmvcreidoalmoco
+    build:
+      context: .
+      dockerfile: WebMvcReiDoAlmoco\Dockerfile
+
+  webapireidoalmoco:
+    image: webapireidoalmoco
+    build:
+      context: .
+      dockerfile: WebApiReiDoAlmoco\Dockerfile
+
+
+  webmvcdoalmoco:
+    image: webmvcdoalmoco
+    build:
+      context: .
+      dockerfile: WebMvcDoAlmoco\Dockerfile
+

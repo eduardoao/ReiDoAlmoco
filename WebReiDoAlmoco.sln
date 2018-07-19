@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebMvcDoAlmoco", "WebMvcDoAlmoco\WebMvcDoAlmoco.csproj", "{F91F5D88-9282-4CB0-BB72-FC12ABE95783}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject1", "UnitTestProject1\UnitTestProject1.csproj", "{C18CD7C5-5278-4637-A68C-F10B87E73C06}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F91F5D88-9282-4CB0-BB72-FC12ABE95783}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F91F5D88-9282-4CB0-BB72-FC12ABE95783}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F91F5D88-9282-4CB0-BB72-FC12ABE95783}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F91F5D88-9282-4CB0-BB72-FC12ABE95783}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C18CD7C5-5278-4637-A68C-F10B87E73C06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C18CD7C5-5278-4637-A68C-F10B87E73C06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C18CD7C5-5278-4637-A68C-F10B87E73C06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C18CD7C5-5278-4637-A68C-F10B87E73C06}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {22894130-A5B9-4DBA-BFAC-861717FE6617}
+	EndGlobalSection
+EndGlobal

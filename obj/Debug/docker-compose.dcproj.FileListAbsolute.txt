@@ -1,0 +1,1 @@
+C:\Users\eduar\source\repos\WebMvcReiDoAlmoco\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache

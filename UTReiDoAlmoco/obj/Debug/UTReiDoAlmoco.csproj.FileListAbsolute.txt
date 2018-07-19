@@ -1,0 +1,13 @@
+C:\Users\eduar\source\repos\WebMvcReiDoAlmoco\UTReiDoAlmoco\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\eduar\source\repos\WebMvcReiDoAlmoco\UTReiDoAlmoco\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\eduar\source\repos\WebMvcReiDoAlmoco\UTReiDoAlmoco\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\eduar\source\repos\WebMvcReiDoAlmoco\UTReiDoAlmoco\bin\Debug\UTReiDoAlmoco.dll
+C:\Users\eduar\source\repos\WebMvcReiDoAlmoco\UTReiDoAlmoco\bin\Debug\UTReiDoAlmoco.pdb
+C:\Users\eduar\source\repos\WebMvcReiDoAlmoco\UTReiDoAlmoco\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\eduar\source\repos\WebMvcReiDoAlmoco\UTReiDoAlmoco\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\eduar\source\repos\WebMvcReiDoAlmoco\UTReiDoAlmoco\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\eduar\source\repos\WebMvcReiDoAlmoco\UTReiDoAlmoco\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\eduar\source\repos\WebMvcReiDoAlmoco\UTReiDoAlmoco\obj\Debug\UTReiDoAlmoco.csprojResolveAssemblyReference.cache
+C:\Users\eduar\source\repos\WebMvcReiDoAlmoco\UTReiDoAlmoco\obj\Debug\UTReiDoAlmoco.csproj.CoreCompileInputs.cache
+C:\Users\eduar\source\repos\WebMvcReiDoAlmoco\UTReiDoAlmoco\obj\Debug\UTReiDoAlmoco.dll
+C:\Users\eduar\source\repos\WebMvcReiDoAlmoco\UTReiDoAlmoco\obj\Debug\UTReiDoAlmoco.pdb

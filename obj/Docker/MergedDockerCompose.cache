@@ -1,0 +1,33 @@
+networks:
+  default:
+    external:
+      name: nat
+services:
+  webapireidoalmoco:
+    build:
+      context: C:\Users\eduar\source\repos\WebMvcReiDoAlmoco
+      dockerfile: WebApiReiDoAlmoco\Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    image: webapireidoalmoco
+    ports:
+    - 80/tcp
+  webmvcdoalmoco:
+    build:
+      context: C:\Users\eduar\source\repos\WebMvcReiDoAlmoco
+      dockerfile: WebMvcDoAlmoco\Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    image: webmvcdoalmoco
+    ports:
+    - 80/tcp
+  webmvcreidoalmoco:
+    build:
+      context: C:\Users\eduar\source\repos\WebMvcReiDoAlmoco
+      dockerfile: WebMvcReiDoAlmoco\Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    image: webmvcreidoalmoco
+    ports:
+    - 80/tcp
+version: '3.0'

@@ -1,0 +1,11 @@
+C:\Users\eduar\source\repos\WebMvcReiDoAlmoco\WebMvcDoAlmoco\bin\Debug\netcoreapp2.0\WebMvcDoAlmoco.deps.json
+C:\Users\eduar\source\repos\WebMvcReiDoAlmoco\WebMvcDoAlmoco\bin\Debug\netcoreapp2.0\WebMvcDoAlmoco.runtimeconfig.json
+C:\Users\eduar\source\repos\WebMvcReiDoAlmoco\WebMvcDoAlmoco\bin\Debug\netcoreapp2.0\WebMvcDoAlmoco.runtimeconfig.dev.json
+C:\Users\eduar\source\repos\WebMvcReiDoAlmoco\WebMvcDoAlmoco\bin\Debug\netcoreapp2.0\WebMvcDoAlmoco.dll
+C:\Users\eduar\source\repos\WebMvcReiDoAlmoco\WebMvcDoAlmoco\bin\Debug\netcoreapp2.0\WebMvcDoAlmoco.pdb
+C:\Users\eduar\source\repos\WebMvcReiDoAlmoco\WebMvcDoAlmoco\obj\Debug\netcoreapp2.0\WebMvcDoAlmoco.csprojResolveAssemblyReference.cache
+C:\Users\eduar\source\repos\WebMvcReiDoAlmoco\WebMvcDoAlmoco\obj\Debug\netcoreapp2.0\WebMvcDoAlmoco.csproj.CoreCompileInputs.cache
+C:\Users\eduar\source\repos\WebMvcReiDoAlmoco\WebMvcDoAlmoco\obj\Debug\netcoreapp2.0\WebMvcDoAlmoco.AssemblyInfoInputs.cache
+C:\Users\eduar\source\repos\WebMvcReiDoAlmoco\WebMvcDoAlmoco\obj\Debug\netcoreapp2.0\WebMvcDoAlmoco.AssemblyInfo.cs
+C:\Users\eduar\source\repos\WebMvcReiDoAlmoco\WebMvcDoAlmoco\obj\Debug\netcoreapp2.0\WebMvcDoAlmoco.dll
+C:\Users\eduar\source\repos\WebMvcReiDoAlmoco\WebMvcDoAlmoco\obj\Debug\netcoreapp2.0\WebMvcDoAlmoco.pdb

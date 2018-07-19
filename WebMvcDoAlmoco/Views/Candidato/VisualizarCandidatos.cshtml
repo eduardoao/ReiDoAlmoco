@@ -1,0 +1,45 @@
+﻿@model IList<WebMvcDoAlmoco.Models.Candidato>
+
+@{
+    ViewData["Title"] = "VisualizarCandidatos";
+}
+
+<h2>VisualizarCandidatos</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+@{ 
+    var listacandidatos = (IList<WebMvcDoAlmoco.Models.Candidato>)ViewData["ListaCandidatos"];
+}
+
+<div class="modal-login">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>
+                    Nome do candidato
+                </th>
+                <th>
+                    Email
+                </th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in listacandidatos)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+ </div>

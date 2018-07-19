@@ -1,0 +1,4 @@
+C:\Users\eduar\source\repos\WebMvcReiDoAlmoco\WebApiReiDoAlmoco\obj\Debug\netcoreapp2.0\WebApiReiDoAlmoco.csprojResolveAssemblyReference.cache
+C:\Users\eduar\source\repos\WebMvcReiDoAlmoco\WebApiReiDoAlmoco\obj\Debug\netcoreapp2.0\WebApiReiDoAlmoco.csproj.CoreCompileInputs.cache
+C:\Users\eduar\source\repos\WebMvcReiDoAlmoco\WebApiReiDoAlmoco\obj\Debug\netcoreapp2.0\WebApiReiDoAlmoco.AssemblyInfoInputs.cache
+C:\Users\eduar\source\repos\WebMvcReiDoAlmoco\WebApiReiDoAlmoco\obj\Debug\netcoreapp2.0\WebApiReiDoAlmoco.AssemblyInfo.cs
