@@ -12,6 +12,8 @@
         padding: 20px;
         border-radius: 5px;
         border: none;
+        color:gray;
+        margin-left: 10px;
     }
 
     .modal-login .modal-header {

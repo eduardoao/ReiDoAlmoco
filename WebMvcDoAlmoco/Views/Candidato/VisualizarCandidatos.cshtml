@@ -1,20 +1,21 @@
-﻿@model IList<WebMvcDoAlmoco.Models.Candidato>
+﻿@model IList<WebMvcDoAlmoco.Models.VotacaoViewModel.CandidatoViewModel>
 
 @{
     ViewData["Title"] = "VisualizarCandidatos";
 }
 
-<h2>VisualizarCandidatos</h2>
+<div class="modal-content">
+    <h2>Visualizar Candidatos</h2>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
 
-@{ 
-    var listacandidatos = (IList<WebMvcDoAlmoco.Models.Candidato>)ViewData["ListaCandidatos"];
-}
+    @{
+        var listacandidatos = (IList<WebMvcDoAlmoco.Models.VotacaoViewModel.CandidatoViewModel>)ViewData["ListaCandidatos"];
+    }
 
-<div class="modal-login">
+
     <table class="table table-striped">
         <thead>
             <tr>
@@ -30,16 +31,21 @@
         <tbody>
             @foreach (var item in listacandidatos)
             {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Nome)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Email)
-                    </td>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Candidato.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Candidato.Email)
+                </td>
 
-                </tr>
+                <td>
+                    <img src="@Url.Content(@item.Candidato.Foto)"/>
+                </td>
+
+
+            </tr>
             }
         </tbody>
     </table>
- </div>
+</div>

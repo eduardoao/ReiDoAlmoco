@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace WebMvcDoAlmoco.Migrations
 {
-    public partial class AspNetUsers : Migration
+    public partial class Votacao : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -46,6 +46,35 @@ namespace WebMvcDoAlmoco.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Candidato",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Email = table.Column<string>(nullable: false),
+                    Nome = table.Column<string>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Candidato", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Eleicao",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Data = table.Column<DateTime>(nullable: false),
+                    TotalVoto = table.Column<int>(nullable: false),
+                    VotoId = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Eleicao", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -154,6 +183,33 @@ namespace WebMvcDoAlmoco.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Voto",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    CandidatoId = table.Column<int>(nullable: false),
+                    EleicaoId = table.Column<int>(nullable: false),
+                    Total = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Voto", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Voto_Candidato_CandidatoId",
+                        column: x => x.CandidatoId,
+                        principalTable: "Candidato",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Voto_Eleicao_EleicaoId",
+                        column: x => x.EleicaoId,
+                        principalTable: "Eleicao",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
@@ -192,6 +248,17 @@ namespace WebMvcDoAlmoco.Migrations
                 column: "NormalizedUserName",
                 unique: true,
                 filter: "[NormalizedUserName] IS NOT NULL");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Voto_CandidatoId",
+                table: "Voto",
+                column: "CandidatoId",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Voto_EleicaoId",
+                table: "Voto",
+                column: "EleicaoId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -212,10 +279,19 @@ namespace WebMvcDoAlmoco.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
+                name: "Voto");
+
+            migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
+
+            migrationBuilder.DropTable(
+                name: "Candidato");
+
+            migrationBuilder.DropTable(
+                name: "Eleicao");
         }
     }
 }

@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace WebMvcDoAlmoco.Models
+namespace WebMvcDoAlmoco.Models.VotacaoViewModel
 {
-    public class VotoCandidato : BaseModel
+    public class CandidatoViewModel: BaseModel
     {
         public Candidato Candidato { get; set; }
-        public int Voto { get; set; }
+        public string Imagem  { get; set; }
+      
     }
 }

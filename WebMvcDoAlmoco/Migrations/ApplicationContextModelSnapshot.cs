@@ -181,19 +181,23 @@ namespace WebMvcDoAlmoco.Migrations
 
             modelBuilder.Entity("WebMvcDoAlmoco.Models.Candidato", b =>
                 {
-                    b.Property<string>("Email")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("Id");
+                    b.Property<string>("Email")
+                        .IsRequired();
 
-                    b.Property<string>("Nome");
+                    b.Property<string>("Foto");
 
-                    b.HasKey("Email");
+                    b.Property<string>("Nome")
+                        .IsRequired();
+
+                    b.HasKey("Id");
 
                     b.ToTable("Candidato");
                 });
 
-            modelBuilder.Entity("WebMvcDoAlmoco.Models.Votacao", b =>
+            modelBuilder.Entity("WebMvcDoAlmoco.Models.Eleicao", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -202,29 +206,32 @@ namespace WebMvcDoAlmoco.Migrations
 
                     b.Property<int>("TotalVoto");
 
+                    b.Property<int>("VotoId");
+
                     b.HasKey("Id");
 
-                    b.ToTable("Votacao");
+                    b.ToTable("Eleicao");
                 });
 
-            modelBuilder.Entity("WebMvcDoAlmoco.Models.VotoCandidato", b =>
+            modelBuilder.Entity("WebMvcDoAlmoco.Models.Voto", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("CandidatoEmail");
+                    b.Property<int>("CandidatoId");
 
-                    b.Property<int?>("VotacaoId");
+                    b.Property<int>("EleicaoId");
 
-                    b.Property<int>("Voto");
+                    b.Property<int>("Total");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CandidatoEmail");
+                    b.HasIndex("CandidatoId")
+                        .IsUnique();
 
-                    b.HasIndex("VotacaoId");
+                    b.HasIndex("EleicaoId");
 
-                    b.ToTable("CandidatoVotacao");
+                    b.ToTable("Voto");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -272,15 +279,17 @@ namespace WebMvcDoAlmoco.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("WebMvcDoAlmoco.Models.VotoCandidato", b =>
+            modelBuilder.Entity("WebMvcDoAlmoco.Models.Voto", b =>
                 {
                     b.HasOne("WebMvcDoAlmoco.Models.Candidato", "Candidato")
-                        .WithMany()
-                        .HasForeignKey("CandidatoEmail");
+                        .WithOne("Voto")
+                        .HasForeignKey("WebMvcDoAlmoco.Models.Voto", "CandidatoId")
+                        .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("WebMvcDoAlmoco.Models.Votacao")
-                        .WithMany("ListaCandidato")
-                        .HasForeignKey("VotacaoId");
+                    b.HasOne("WebMvcDoAlmoco.Models.Eleicao", "Eleicao")
+                        .WithMany("Voto")
+                        .HasForeignKey("EleicaoId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }

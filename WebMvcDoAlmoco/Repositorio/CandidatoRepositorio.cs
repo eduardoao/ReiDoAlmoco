@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using WebMvcDoAlmoco.Models;
@@ -9,13 +8,12 @@ using WebMvcReiDoAlmoco.Interfaces;
 namespace WebMvcDoAlmoco.Repositorio
 {
     public class CandidatoRepositorio : BaseRepository<Candidato>, ICandidatoRepositorio
-    {       
+    {     
 
         public CandidatoRepositorio(ApplicationContext contexto) : base(contexto)
         {
             
         }
-
 
         public void Adicionar(BaseModel baseModel)
         {
@@ -56,7 +54,7 @@ namespace WebMvcDoAlmoco.Repositorio
                 throw new Exception(string.Format("Erro ao acessar a base de dados. Descrição: {0}", ex.Message), ex);
             }
            
-        }
+        }             
 
         public IList<BaseModel> RetornarTodos()
         {
@@ -71,5 +69,20 @@ namespace WebMvcDoAlmoco.Repositorio
             }
             
         }
+
+        public Candidato RetornarId(int id)
+        {
+            try
+            {
+                return contexto.Candidato.Find(id);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(string.Format("Erro ao acessar a base de dados. Descrição: {0}", ex.Message), ex);
+            }
+
+        }
+
+
     }
 }
