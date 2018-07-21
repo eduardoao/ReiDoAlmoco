@@ -9,5 +9,6 @@ namespace WebMvcReiDoAlmoco.Interfaces
         void Adicionar(BaseModel baseModel);
         IList<BaseModel> RetornarTodos();
         void Remover(BaseModel baseModel);
+       
     }
 }

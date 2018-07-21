@@ -1,45 +1,52 @@
-﻿@model IList<WebMvcDoAlmoco.Models.Candidato>
+﻿@model IList<WebMvcDoAlmoco.Models.VotacaoViewModel.CandidatoViewModel>
 
 @{
     ViewData["Title"] = "VisualizarCandidatos";
 }
 
-<h2>VisualizarCandidatos</h2>
+<div class="modal-content">
+    <div class="container1">
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+        <p>
+            <a asp-action="Cadastrar">Adicionar Novo</a>
+        </p>
 
-@{ 
-    var listacandidatos = (IList<WebMvcDoAlmoco.Models.Candidato>)ViewData["ListaCandidatos"];
-}
+        @{
+            var listacandidatos = (IList<WebMvcDoAlmoco.Models.VotacaoViewModel.CandidatoViewModel>)ViewData["ListaCandidatos"];
+        }
 
-<div class="modal-login">
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>
-                    Nome do candidato
-                </th>
-                <th>
-                    Email
-                </th>
 
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in listacandidatos)
-            {
+        <table class="table table-striped">
+            <thead>
                 <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Nome)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Email)
-                    </td>
+                    <th>
+                        Nome do candidato
+                    </th>
+                    <th>
+                        Email
+                    </th>
 
                 </tr>
-            }
-        </tbody>
-    </table>
- </div>
+            </thead>
+            <tbody>
+                @foreach (var item in listacandidatos)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Candidato.Nome)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Candidato.Email)
+                        </td>
+
+                        <td>
+                            <img class="img-size" src="@Url.Content(@item.Candidato.Foto)" />
+                        </td>
+
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

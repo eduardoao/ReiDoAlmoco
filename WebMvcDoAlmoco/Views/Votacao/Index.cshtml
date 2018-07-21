@@ -1,0 +1,56 @@
+﻿@model WebMvcDoAlmoco.Models.VotacaoViewModel.EleicaoViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+
+
+<div class="modal-content container1">
+
+   
+    <br />
+    @{
+        var horario = ViewBag.Horario;
+
+        if (horario != null)
+        {
+            <div class="alert-info">
+                @horario
+            </div>
+        }
+        else
+        {
+            <form asp-action="Index">
+                @foreach (var a in Model.CandidatoVotos)
+                {
+                    <p>
+
+                        @Html.RadioButtonFor(b => b.VotoId, a.Id)
+                        @Html.Label(a.Nome)
+
+                    </p>
+                }
+
+
+                <div class="form-group">
+                    <input type="submit" value="Votar" class="btn btn-default" />
+                </div>
+            </form>
+
+        }
+    }
+
+    @*@Html.Partial("ListaMaisVotado.cshtml")*@
+
+
+
+</div>
+
+
+@*<div>
+    <a asp-action="Index">Back to List</a>
+</div>*@
+

@@ -6,7 +6,8 @@ namespace WebMvcReiDoAlmoco.Interfaces
 {
     public interface ICandidatoRepositorio: IBase
     {       
-        Candidato Retornar(string email);       
-       
+        Candidato Retornar(string email);
+        Candidato RetornarId(int id);
+
     }
 }

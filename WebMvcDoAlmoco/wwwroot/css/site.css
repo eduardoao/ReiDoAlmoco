@@ -1,7 +1,10 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
-    background-image: url('../images/rei-do-almoco-bg.jpg');
+    background-color: lightgray;
+    color: gray;
+   
+    /*background-image: url('../images/rei-do-almoco-bg.jpg');*/
 }
 
 /* Wrapping element */
@@ -46,3 +49,19 @@
     border-radius: 6px;
     width: 80%;
 }
+
+
+.container1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-size {
+    max-width: 40px;
+    max-height: 40px;
+    width: auto;
+    height: auto;
+}
+
+

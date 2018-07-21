@@ -11,7 +11,12 @@ namespace WebMvcDoAlmoco.Models
         [Required]
         [Display(Name = "Email")]
         [EmailAddress(ErrorMessage = "Email inválido")]
-        public string Email { get; set; }     
+        public string Email { get; set; }
+
+        public Voto Voto { get; set; }
+
+        public string Foto { get; set; }         
+
 
     }
 }

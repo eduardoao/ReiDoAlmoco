@@ -1,8 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using WebMvcDoAlmoco.Models;
 using WebMvcReiDoAlmoco;
 
@@ -17,6 +13,8 @@ namespace WebMvcDoAlmoco.Repositorio
         {
             this.contexto = contexto;
             dbSet = contexto.Set<T>();
-        }
+        } 
+        
+
     }
 }

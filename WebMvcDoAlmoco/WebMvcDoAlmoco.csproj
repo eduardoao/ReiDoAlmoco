@@ -6,6 +6,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="FotoCandidatos\c3e8b06f-b13d-4520-8424-c647cc3e81fc.jpg" />
+    <None Remove="FotoCandidatos\ea4db3f5-ca2a-42cb-8dff-51b4b7efd83e.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="FotoCandidatos\c3e8b06f-b13d-4520-8424-c647cc3e81fc.jpg">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="FotoCandidatos\ea4db3f5-ca2a-42cb-8dff-51b4b7efd83e.jpg">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CoreCompat.System.Drawing" Version="1.0.0-beta006" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.5" />
     <PackageReference Include="Microsoft.Owin" Version="4.0.0" />
     <PackageReference Include="Microsoft.Owin.Security.OAuth" Version="4.0.0" />
@@ -20,7 +35,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Helper\" />
+    <Folder Include="wwwroot\FotoCandidatos\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\FotoCandidatos\ea4db3f5-ca2a-42cb-8dff-51b4b7efd83e.jpg" />
   </ItemGroup>
 
 </Project>

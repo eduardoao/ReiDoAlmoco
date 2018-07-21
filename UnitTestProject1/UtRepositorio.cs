@@ -5,6 +5,7 @@ using Moq;
 using System;
 using System.Collections.Generic;
 using WebMvcDoAlmoco;
+using WebMvcDoAlmoco.Interfaces;
 using WebMvcDoAlmoco.Models;
 using WebMvcDoAlmoco.Repositorio;
 using WebMvcReiDoAlmoco.Interfaces;
@@ -16,20 +17,20 @@ namespace UnitTestProject1
     {
 
         #region Atributos
-        private string connectionstring = "Data Source = LAPTOP-QSD1P64U; Initial Catalog = ReiDoAlmoco; Integrated Security = True; Connect Timeout = 30; Encrypt = False; TrustServerCertificate = True; ApplicationIntent = ReadWrite; MultiSubnetFailover = False";
+        private string connectionstring = "Data Source = DESKTOP-H0I2H73; Initial Catalog = ReiDoAlmoco; Integrated Security = True; Connect Timeout = 30; Encrypt = False; TrustServerCertificate = True; ApplicationIntent = ReadWrite; MultiSubnetFailover = False";
         private Mock<IConfigurationSection> configurationSectionStub;
         Mock<IConfiguration> configurationStub;
         private IServiceCollection services;
         private ICandidatoRepositorio candidatoRepositorio;
-        private IVotacaoRepositorio votacaoRepositorio;
+        private IEleicaoRepositorio votacaoRepositorio;
         private ServiceProvider ServiceProvider;
 
         private Candidato candidato;
         private Candidato candidato1;
         private Candidato candidato2;
 
-        private VotoCandidato voto1;
-        private VotoCandidato voto2;
+        private Voto voto1;
+        private Voto voto2;
 
         private IList<BaseModel> listaCandidatos;
         #endregion
@@ -40,9 +41,9 @@ namespace UnitTestProject1
             return ServiceProvider.GetService<ICandidatoRepositorio>();
         }
 
-        private IVotacaoRepositorio RetornarVotacaoRepositorio()
+        private IEleicaoRepositorio RetornarVotacaoRepositorio()
         {
-            return ServiceProvider.GetService<IVotacaoRepositorio>();
+            return ServiceProvider.GetService<IEleicaoRepositorio>();
         }
 
         private void CaregaDadosParaTeste()
@@ -53,19 +54,19 @@ namespace UnitTestProject1
 
             candidato1 = new Candidato { Email = "eoalcantara@gmail.com", Nome = "Eduardo Alcantara" };
             candidato2 = new Candidato { Email = "regina@gmail.com", Nome = "Regina Alcantara" };
-            voto1 = new VotoCandidato { Candidato = candidato1, Voto = 1 };
-            voto2 = new VotoCandidato { Candidato = candidato2, Voto = 1 };
+            voto1 = new Voto { Candidato = candidato1, Total = 1 };
+            voto2 = new Voto { Candidato = candidato2, Total = 1 };
 
-            var listacandidatos = new List<VotoCandidato>
+            var listacandidatos = new List<Voto>
             {
                 voto1,
                 voto2
             };
 
-            var votacao = new Votacao { Data = DateTime.Now, ListaCandidato = listacandidatos, TotalVoto = listacandidatos.Count };
+            var eleicao = new Eleicao { Data = DateTime.Now, Voto = listacandidatos, TotalVoto = listacandidatos.Count };
 
             votacaoRepositorio = RetornarVotacaoRepositorio();
-            votacaoRepositorio.Adicionar(votacao);
+            votacaoRepositorio.Adicionar(eleicao);
 
         }
         #endregion
@@ -83,7 +84,8 @@ namespace UnitTestProject1
 
             services = new ServiceCollection();
             services.AddTransient<ICandidatoRepositorio, CandidatoRepositorio>();
-            services.AddTransient<IVotacaoRepositorio, VotacaoRepositorio>();
+            services.AddTransient<IEleicaoRepositorio, EleicaoRepositorio>();
+            services.AddTransient<IVotoRepositorio, VotoRepositorio>();
 
             var target = new Startup(configurationStub.Object);
             target.ConfigureServices(services);
@@ -110,8 +112,10 @@ namespace UnitTestProject1
 
         #region Votacao       
        
+        [TestMethod]
         public void TesteVotacaoComSucesso()
-        {        
+        {
+            var retornarEleicoes = votacaoRepositorio.RetornarTodos();
 
 
         }

@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using WebMvcDoAlmoco.Interfaces;
 using WebMvcDoAlmoco.Models;
 using WebMvcDoAlmoco.Repositorio;
 using WebMvcDoAlmoco.Services;
@@ -75,8 +76,10 @@ namespace WebMvcDoAlmoco
 
 
             services.AddTransient<ICandidatoRepositorio, CandidatoRepositorio>();
-            services.AddTransient<IVotacaoRepositorio, VotacaoRepositorio>();
-            services.AddTransient<BaseModel, Candidato>();
+            services.AddTransient<IEleicaoRepositorio, EleicaoRepositorio>();
+            services.AddTransient<IVotoRepositorio, VotoRepositorio>();
+            services.AddTransient<IVotoRepositorio, VotoRepositorio>();
+            services.AddTransient<IEmailSender, EmailSender>();
 
             services.AddTransient<IEmailSender, EmailSender>();
 
